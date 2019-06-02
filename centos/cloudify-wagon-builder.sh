@@ -17,3 +17,5 @@ else
     echo "## /packaging/$CONSTRAINTS_FILE doesn't exist"
     wagon create -s . -r -v -f
 fi
+
+cp -R * /workspace/build/
