@@ -8,11 +8,11 @@ ARG PASSWORD
 
 RUN subscription-manager register --username "$USERNAME" --password "$PASSWORD" --auto-attach
 
+RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-
-RUN python get-pip.py
+RUN yum -y install python-pip
 
 RUN pip install --upgrade pip==9.0.3
 
