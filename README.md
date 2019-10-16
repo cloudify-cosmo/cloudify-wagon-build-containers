@@ -1,6 +1,17 @@
 # cloudify-wagon-builders
 
   - Centos is available [here](https://hub.docker.com/r/earthmancfy/cloudify-centos-wagon-builder).
+  - RedHat: In order to build a RedHat docker image the following steps must be done:
+      - Get a developer account from [here](https://developers.redhat.com/)
+      - Prepare username & password for the created account to use later on when build the image `USERNAME` & `PASSWORD`
+      
+
+### Docker Image Build
+
+1. Centos: Run ```shell docker build -t cloudify-centos-wagon-builder .```    
+
+2. RedHat: Run ```shell docker build -t cloudify-redhat-wagon-builder --build-arg USERNAME="<USERNAME>" --build-arg PASSWORD="<PASSWORD>" .```
+
 
 ### Usage
 
