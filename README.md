@@ -20,7 +20,7 @@ You can build the wagon by mounting your plugin directory in the Docker containe
 ```shell
 docker run \
   -v ~/dev/repos/cloudify-openstack-plugin/:/packaging \
-  earthmancfy/cloudify-centos-wagon-builder
+  cloudify-centos-wagon-builder
 ```
 
 The wagon will then be found in that plugin directory:
