@@ -9,14 +9,15 @@ if test -f /packaging/extra-packaging-instructions.sh
 then
     source /packaging/extra-packaging-instructions.sh
 fi
-
+source /env/bin/activate
+echo "manylinux1_compatible = False" > "/env/bin/_manylinux.py"
 if test -f ${CONSTRAINTS_FILE}
 then
-    echo "## /$CONSTRAINTS_FILE exist"
-    wagon create . -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}''
+    echo "## $CONSTRAINTS_FILE exist"
+    wagon create -s . -r -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}''
 else
-    echo "## /$CONSTRAINTS_FILE doesn't exist"
-    wagon create . -r $REQUIREMENTS_FILE -v -f
+    echo "## $CONSTRAINTS_FILE doesn't exist"
+    wagon create -s . -r $REQUIREMENTS_FILE -v -f
 fi
 
 cp -R * /workspace/build/

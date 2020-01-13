@@ -6,15 +6,20 @@ RUN apt-get update
 
 RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr curl
 
+
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 
 RUN python get-pip.py
 
-RUN pip install --upgrade pip==9.0.3
-
 RUN ln -s /usr/local/bin/pip /usr/bin/pip
 
-RUN pip install wagon==0.6.3
+RUN pip install virtualenv
+
+RUN cd / && \
+    virtualenv env && \
+    /bin/bash -c "source env/bin/activate" && \
+    pip install --upgrade pip==9.0.1 && \
+    pip install wagon==0.3.2
 
 WORKDIR /packaging
 
