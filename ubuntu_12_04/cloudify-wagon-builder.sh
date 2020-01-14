@@ -3,7 +3,6 @@ set -e
 echo "Starting..."
 
 CONSTRAINTS_FILE=/packaging/constraints.txt
-REQUIREMENTS_FILE=/packaging/dev-requirements.txt
 
 if test -f /packaging/extra-packaging-instructions.sh
 then
@@ -17,7 +16,7 @@ then
     wagon create -s . -r -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}''
 else
     echo "## $CONSTRAINTS_FILE doesn't exist"
-    wagon create -s . -r $REQUIREMENTS_FILE -v -f
+    wagon create -s . -r -v -f
 fi
 
 cp -R * /workspace/build/
