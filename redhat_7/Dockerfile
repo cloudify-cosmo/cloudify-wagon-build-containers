@@ -8,17 +8,21 @@ ARG PASSWORD
 
 RUN subscription-manager register --username "$USERNAME" --password "$PASSWORD" --auto-attach
 
-RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
-RUN yum -y install python-pip
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 
-RUN pip install --upgrade pip==9.0.3
+RUN python get-pip.py
 
-RUN pip install --upgrade setuptools==28.8.0
+RUN pip install virtualenv
 
-RUN pip install wagon==0.6.3
+RUN cd / && \
+    virtualenv env && \
+    source env/bin/activate && \
+    pip install --upgrade pip==9.0.1 && \
+    pip install wagon==0.3.2
 
 RUN subscription-manager unregister
 
