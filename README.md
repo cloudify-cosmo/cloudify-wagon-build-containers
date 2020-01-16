@@ -1,6 +1,9 @@
 # cloudify-wagon-builders
 
-  - Centos is available [here](https://hub.docker.com/r/earthmancfy/cloudify-centos-wagon-builder).
+  - Centos6 is available [here](https://hub.docker.com/repository/docker/mabuaisha/cloudify-centos6-wagon-builder).
+  - Centos7 is available [here](https://hub.docker.com/repository/docker/mabuaisha/cloudify-centos7-wagon-builder).
+  - Ubuntu-12-04 is available [here](https://hub.docker.com/repository/docker/mabuaisha/cloudify-ubuntu-12-04-wagon-builder).
+  - Ubuntu-14-04 is available [here](https://hub.docker.com/repository/docker/mabuaisha/cloudify-ubuntu-14-04-wagon-builder).
   - RedHat: In order to build a RedHat docker image the following steps must be done:
       - Get a developer account from [here](https://developers.redhat.com/)
       - Prepare username & password for the created account to use later on when build the image `USERNAME` & `PASSWORD`
@@ -8,9 +11,17 @@
 
 ### Docker Image Build
 
-1. Centos: Run ```shell docker build -t cloudify-centos-wagon-builder .```    
+1. Centos6 | Centos7 | Ubuntu-12-04 |  Ubuntu-14-04: Run 
 
-2. RedHat: Run ```shell docker build -t cloudify-redhat-wagon-builder --build-arg USERNAME="<USERNAME>" --build-arg PASSWORD="<PASSWORD>" .```
+``` 
+shell docker build -t cloudify-${image-name}-wagon-builder . 
+```    
+
+2. RedHat: Run 
+
+```shell 
+docker build -t cloudify-redhat-wagon-builder --build-arg USERNAME="<USERNAME>" --build-arg PASSWORD="<PASSWORD>" .
+```
 
 
 ### Usage
@@ -20,7 +31,7 @@ You can build the wagon by mounting your plugin directory in the Docker containe
 ```shell
 docker run \
   -v ~/dev/repos/cloudify-openstack-plugin/:/packaging \
-  cloudify-centos-wagon-builder
+  cloudify-${image-name}-wagon-builder
 ```
 
 The wagon will then be found in that plugin directory:
