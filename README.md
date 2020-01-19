@@ -13,8 +13,8 @@
 
 1. Centos6 | Centos7 | Ubuntu-12-04 |  Ubuntu-14-04: Run 
 
-``` 
-shell docker build -t cloudify-${image-name}-wagon-builder . 
+```shell
+docker build -t cloudify-${image-name}-wagon-builder . 
 ```    
 
 2. RedHat: Run 
