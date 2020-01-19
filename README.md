@@ -1,9 +1,9 @@
 # cloudify-wagon-builders
 
-  - Centos6 is available [here](https://hub.docker.com/repository/docker/mabuaisha/cloudify-centos-6-wagon-builder).
-  - Centos7 is available [here](https://hub.docker.com/repository/docker/mabuaisha/cloudify-centos-7-wagon-builder).
-  - Ubuntu-12-04 is available [here](https://hub.docker.com/repository/docker/mabuaisha/cloudify-ubuntu-12-04-wagon-builder).
-  - Ubuntu-14-04 is available [here](https://hub.docker.com/repository/docker/mabuaisha/cloudify-ubuntu-14-04-wagon-builder).
+  - Centos6 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-centos-6-wagon-builder).
+  - Centos7 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-centos-7-wagon-builder).
+  - Ubuntu-12-04 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-12-04-wagon-builder).
+  - Ubuntu-14-04 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-14-04-wagon-builder).
   - RedHat: In order to build a RedHat docker image the following steps must be done:
       - Get a developer account from [here](https://developers.redhat.com/)
       - Prepare username & password for the created account to use later on when build the image `USERNAME` & `PASSWORD`
