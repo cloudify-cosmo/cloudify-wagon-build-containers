@@ -12,7 +12,7 @@ RUN python get-pip.py
 
 RUN ln -s /usr/local/bin/pip /usr/bin/pip
 
-RUN pip install virtualenv
+RUN pip install virtualenv==15.1.0
 
 RUN cd / && \
     virtualenv env && \
