@@ -18,7 +18,7 @@ RUN cd / && \
     virtualenv env && \
     source env/bin/activate && \
     pip install --upgrade pip==9.0.1 && \
-    pip install virtualenv==15.1.0
+    pip install virtualenv==15.1.0 && \
     pip install wagon==0.3.2
 
 
