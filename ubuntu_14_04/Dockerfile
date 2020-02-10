@@ -15,7 +15,7 @@ RUN ln -s /usr/local/bin/pip /usr/bin/pip
 RUN pip install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \
-    source env/bin/activate && \
+    /bin/bash -c "source env/bin/activate" && \
     pip install --upgrade pip==9.0.1 && \
     pip install --upgrade virtualenv==15.1.0 && \
     pip install wagon==0.3.2
