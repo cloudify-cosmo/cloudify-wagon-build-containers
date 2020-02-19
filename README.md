@@ -31,7 +31,7 @@ You can build the wagon by mounting your plugin directory in the Docker containe
 ```shell
 docker run \
   -v ~/dev/repos/cloudify-openstack-plugin/:/packaging \
-  cloudify-${image-name}-wagon-builder
+  cloudifyplatform/cloudify-${image-name}-wagon-builder
 ```
 
 The wagon will then be found in that plugin directory:
