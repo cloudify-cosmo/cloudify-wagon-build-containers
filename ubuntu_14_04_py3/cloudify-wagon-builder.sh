@@ -20,4 +20,9 @@ else
     wagon create -r ${REQUIRMENTS_FILE} -v -f .
 fi
 
+echo "appending platform to wagon file name"
+OS_DIST=$(python -c 'import platform; print(platform.linux_distribution(full_distribution_name=False)[0])')
+OS_RELEASE=$(python -c 'import platform; print(platform.linux_distribution(full_distribution_name=False)[2])')
+ls /packaging/*.wgn | sed 'p;s/\.wgn/\-'${OS_DIST}'-'${OS_RELEASE}'.wgn/' | xargs -n2 mv
+
 cp -R * /workspace/build/
