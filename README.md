@@ -1,25 +1,39 @@
 # cloudify-wagon-builders
 
+  For python 2 wagon builders:
   - Centos6 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-centos-6-wagon-builder).
   - Centos7 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-centos-7-wagon-builder).
   - Ubuntu-12-04 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-12-04-wagon-builder).
   - Ubuntu-14-04 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-14-04-wagon-builder).
-  - RedHat: In order to build a RedHat docker image the following steps must be done:
+
+  For python 3 wagon builders:
+  - Centos6-py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-centos-6-py3-wagon-builder).
+  - Centos7-py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-centos-7-py3-wagon-builder).
+  - Ubuntu-12-04-py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-12-04-py3-wagon-builder).
+  - Ubuntu-14-04-py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-14-04-py3-wagon-builder).
+
+  For RedHat wagon builders:
+   - In order to build a RedHat docker image the following steps must be done:
       - Get a developer account from [here](https://developers.redhat.com/)
       - Prepare username & password for the created account to use later on when build the image `USERNAME` & `PASSWORD`
-      
 
 ### Docker Image Build
 
-1. Centos6 | Centos7 | Ubuntu-12-04 |  Ubuntu-14-04: Run 
+1. Centos6 | Centos7 | Ubuntu-12-04 |  Ubuntu-14-04: Run
 
 ```shell
-docker build -t cloudify-${image-name}-wagon-builder . 
+docker build -t cloudify-${image-name}-wagon-builder .
 ```    
 
-2. RedHat: Run 
+for python 3 builders:
+```shell
+docker build -t cloudify-${image-name}-py3-wagon-builder .
+```    
 
-```shell 
+
+2. RedHat: Run
+
+```shell
 docker build -t cloudify-redhat-wagon-builder --build-arg USERNAME="<USERNAME>" --build-arg PASSWORD="<PASSWORD>" .
 ```
 
@@ -56,4 +70,4 @@ drwxr-xr-x 1 vagrant vagrant   256 May 22 08:53 openstack_sdk
 
 ### Extra Packaging Instructions
 
-You can add extra packaging instructions to your plugin build by adding a script in the plugin directory named `extra-packaging-instructions.sh`. This file will be `source`-ed before the wagon is biult.
+You can add extra packaging instructions to your plugin build by adding a script in the plugin directory named `extra-packaging-instructions.sh`. This file will be `source`-ed before the wagon is built.
