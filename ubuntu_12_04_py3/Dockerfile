@@ -29,7 +29,7 @@ RUN cd / && \
     /bin/bash -c "source env/bin/activate" && \
     pip3 install --upgrade pip==9.0.1 && \
     pip3 install --upgrade virtualenv==15.1.0 && \
-    pip3 install wagon==0.6.3
+    pip3 install wagon==0.9
 
 
 WORKDIR /packaging
