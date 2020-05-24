@@ -12,9 +12,7 @@ RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-
-RUN python get-pip.py
+RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python
 
 RUN pip install virtualenv==15.1.0
 RUN cd / && \
