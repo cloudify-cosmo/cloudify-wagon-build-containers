@@ -10,23 +10,16 @@ RUN cd / && \
     virtualenv py2env && \
     source py2env/bin/activate && \
     pip install --upgrade pip==9.0.1 && \
-    pip install --upgrade virtualenv==15.1.0 && \
     pip install --upgrade pip setuptools && \
     pip install wagon==0.10.0
 
 
 RUN yum -y install --enablerepo=updates python3 python3-devel
 
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-
-RUN python3 get-pip.py
-
-RUN pip3 install virtualenv==15.1.0
 RUN cd / && \
-    virtualenv py3env && \
+    python3 -m venv py3env && \
     source py3env/bin/activate && \
     pip3 install --upgrade pip==9.0.1 && \
-    pip3 install --upgrade virtualenv==15.1.0 && \
     pip3 install --upgrade pip setuptools && \
     pip3 install wagon==0.10.0
 
