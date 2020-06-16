@@ -14,9 +14,7 @@ RUN yum-config-manager --enable rhel-7-server-optional-rpms
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
-RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python
-
-RUN pip install virtualenv==15.1.0
+RUN yum install -y python-virtualenv
 
 RUN cd / && \
     virtualenv py2env && \
@@ -24,8 +22,6 @@ RUN cd / && \
     pip install --upgrade pip==9.0.1 && \
     pip install --upgrade virtualenv==15.1.0 && \
     pip install wagon==0.10.0
-
-
 
 RUN yum -y install python3 python3-devel
 
@@ -40,7 +36,6 @@ RUN cd / && \
     pip3 install --upgrade pip==9.0.1 && \
     pip3 install --upgrade virtualenv==15.1.0 && \
     pip3 install wagon==0.10.0
-
 
 RUN subscription-manager unregister
 
