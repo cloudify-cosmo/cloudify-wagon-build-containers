@@ -13,10 +13,10 @@ source /$1/bin/activate
 echo "manylinux1_compatible = False" > "/$1/bin/_manylinux.py"
 if [[ -f "${CONSTRAINTS_FILE}" ]]; then
     echo "## $CONSTRAINTS_FILE exist"
-    wagon create --pip /$1/bin/pip --pip /$2/bin/pip --pyver "27" --pyver "36" -r ${REQUIREMENTS_FILE} -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}'' .
+    wagon create --pip /$1/bin/pip --pip /$2/bin/pip --pyver "27" --pyver "36" --build-tag "centos-Core" -r ${REQUIREMENTS_FILE} -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}'' .
 else
     echo "## $CONSTRAINTS_FILE doesn't exist"
-    wagon create --pip /$1/bin/pip --pip /$2/bin/pip --pyver "27" --pyver "36" -r ${REQUIREMENTS_FILE} -v -f .
+    wagon create --pip /$1/bin/pip --pip /$2/bin/pip --pyver "27" --pyver "36" --build-tag "centos-Core" -r ${REQUIREMENTS_FILE} -v -f .
 fi
 
 cp -R * /workspace/build/
