@@ -11,6 +11,7 @@ RUN cd / && \
     source py2env/bin/activate && \
     pip install --upgrade pip==9.0.1 && \
     pip install --upgrade virtualenv==15.1.0 && \
+    pip install --upgrade pip setuptools && \
     pip install wagon==0.10.0
 
 
@@ -26,6 +27,7 @@ RUN cd / && \
     source py3env/bin/activate && \
     pip3 install --upgrade pip==9.0.1 && \
     pip3 install --upgrade virtualenv==15.1.0 && \
+    pip3 install --upgrade pip setuptools && \
     pip3 install wagon==0.10.0
 
 
