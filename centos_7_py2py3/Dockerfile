@@ -10,7 +10,6 @@ RUN cd / && \
     virtualenv py2env && \
     source py2env/bin/activate && \
     pip install --upgrade pip==9.0.1 && \
-    pip install --upgrade pip setuptools && \
     pip install wagon==0.10.0
 
 
