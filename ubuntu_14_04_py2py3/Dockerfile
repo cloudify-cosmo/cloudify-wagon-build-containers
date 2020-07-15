@@ -22,20 +22,9 @@ RUN cd /tmp && \
     make && \
     make altinstall
 
-# RUN cd /tmp && \
-#     wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-28.8.0.tar.gz && \
-#     tar -xvf setuptools-28.8.0.tar.gz && \
-#     cd setuptools-28.8.0 && \
-#     python3.6 setup.py install && \
-#     curl https://bootstrap.pypa.io/get-pip.py | python3.6
 
-# RUN ln -s /usr/local/bin/pip3 /usr/bin/pip3
-
-# RUN pip3 install virtualenv==15.1.0
 RUN cd / && \
     python3.6 -m venv py3env && \
-#     virtualenv py3env && \
-#     /bin/bash -c "source py3env/bin/activate" && \
     py3env/bin/pip3 install --upgrade pip==9.0.1 && \
     py3env/bin/pip3 install --upgrade pip setuptools && \
     py3env/bin/pip3 install --upgrade virtualenv==15.1.0 && \
