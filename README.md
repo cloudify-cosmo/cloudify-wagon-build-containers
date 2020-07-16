@@ -18,8 +18,8 @@
       - Prepare username & password for the created account to use later on when build the image `USERNAME` & `PASSWORD`
 
 **Notes**:
- - py2py3 wagon builders are used for both python2 managers(5.0.5 and older) and python3 managers(5.1 and newer). 
- - For Ubuntu, if 5.1 manager or newer is used, use py2py3 wagon builder, else use py2 wagon builders.
+ - py2py3 wagon builders are used for both python2 managers(5.0.5 and older) and python3 managers(5.1.0 and newer). 
+ - For Ubuntu, if 5.1.0 manager or newer is used, use py2py3 wagon builder, else use py2 wagon builders.
  
 ### Docker Image Build
 
