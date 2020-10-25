@@ -4,7 +4,7 @@ MAINTAINER Cosmo (hello@cloudify.co)
 
 RUN apt-get update
 
-RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr curl
+RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr curl git
 
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 
@@ -18,7 +18,7 @@ RUN cd / && \
     /bin/bash -c "source env/bin/activate" && \
     pip install --upgrade pip==9.0.1 && \
     pip install --upgrade virtualenv==15.1.0 && \
-    pip install wagon==0.3.2
+    pip install wagon==0.11.0
 
 WORKDIR /packaging
 
