@@ -27,9 +27,9 @@ RUN pip3 install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \
     /bin/bash -c "source env/bin/activate" && \
-    pip3 install --upgrade pip==9.0.1 && \
+    pip3 install --upgrade pip==19.3.1 && \
     pip3 install --upgrade virtualenv==15.1.0 && \
-    pip3 install wagon==0.9
+    pip3 install wagon==0.11.0
 
 WORKDIR /packaging
 
