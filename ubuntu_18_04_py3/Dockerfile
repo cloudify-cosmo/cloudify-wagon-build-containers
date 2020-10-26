@@ -4,16 +4,15 @@ MAINTAINER Cosmo (hello@cloudify.co)
 
 RUN apt-get update
 
-RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr libpq-dev zlib1g-dev
-
+RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr libpq-dev zlib1g-dev git
 
 RUN  apt-get install -y python3-venv
 
 RUN cd / && \
     python3 -m venv env && \
-    env/bin/pip3 install --upgrade pip setuptools && \
+    env/bin/pip3 install --upgrade pip==19.3.1 setuptools && \
     env/bin/pip3 install --upgrade virtualenv==15.1.0 && \
-    env/bin/pip3 install wagon==0.9.0
+    env/bin/pip3 install wagon==0.11.0
 
 WORKDIR /packaging
 
