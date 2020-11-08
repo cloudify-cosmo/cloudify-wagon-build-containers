@@ -16,7 +16,7 @@
   - Ubuntu-16-04-py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-16-04-py3-wagon-builder).
   - Ubuntu-18-04-py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-18-04-py3-wagon-builder).  
 
-  For python 2 python 3(py2py3) wagon builders:
+  For python 2 python 3 (py2py3) wagon builders:
   - Centos7-py2py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-centos-7-py2py3-wagon-builder).
   - Ubuntu-14-04-py2py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-14-04-py2py3-wagon-builder).  
   - Ubuntu-16-04-py2py3 is available [here](https://hub.docker.com/r/cloudifyplatform/cloudify-ubuntu-16-04-py2py3-wagon-builder). 
