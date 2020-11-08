@@ -79,7 +79,7 @@ drwxr-xr-x 20 usr usr       4096 Mar 17  2020 cloudify_aws/
 .
 .
 .
--rw-r--r--  1 adar adar        613 Jul  7 12:38 tox.ini
+-rw-r--r--  1 usr usr        613 Jul  7 12:38 tox.ini
 
 ```
 
