@@ -39,13 +39,13 @@ RUN cd /tmp && \
     python3.6 setup.py install && \
     curl https://bootstrap.pypa.io/get-pip.py | python3.6
 
-RUN pip3 install virtualenv==15.1.0
+RUN pip3 install --no-cache-dir virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \
     source env/bin/activate && \
-    pip3 install --upgrade pip==19.3.1 && \
-    pip3 install --upgrade virtualenv==15.1.0 && \
-    pip3 install wagon==0.11.0
+    pip3 install --no-cache-dir --upgrade pip==19.3.1 && \
+    pip3 install --no-cache-dir --upgrade virtualenv==15.1.0 && \
+    pip3 install --no-cache-dir wagon==0.11.0
 
 
 WORKDIR /packaging

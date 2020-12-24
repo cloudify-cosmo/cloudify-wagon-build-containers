@@ -20,13 +20,13 @@ RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 
 RUN python3 get-pip.py
 
-RUN pip3 install virtualenv==15.1.0
+RUN pip3 install --no-cache-dir virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \
     source env/bin/activate && \
-    pip3 install --upgrade pip==19.3.1 && \
-    pip3 install --upgrade virtualenv==15.1.0 && \
-    pip3 install wagon==0.11.0
+    pip3 install --no-cache-dir --upgrade pip==19.3.1 && \
+    pip3 install --no-cache-dir --upgrade virtualenv==15.1.0 && \
+    pip3 install --no-cache-dir wagon==0.11.0
 
 
 RUN subscription-manager unregister

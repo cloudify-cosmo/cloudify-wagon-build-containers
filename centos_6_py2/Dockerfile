@@ -39,13 +39,13 @@ RUN cd /tmp && \
     python2.7 setup.py install && \
     curl https://bootstrap.pypa.io/get-pip.py | python2.7
 
-RUN pip install virtualenv==15.1.0
+RUN pip install --no-cache-dir virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \
     source env/bin/activate && \
-    pip install --upgrade pip==9.0.1 && \
-    pip install --upgrade virtualenv==15.1.0 && \
-    pip install wagon==0.11.0
+    pip install --no-cache-dir --upgrade pip==9.0.1 && \
+    pip install --no-cache-dir --upgrade virtualenv==15.1.0 && \
+    pip install --no-cache-dir wagon==0.11.0
 
 
 WORKDIR /packaging

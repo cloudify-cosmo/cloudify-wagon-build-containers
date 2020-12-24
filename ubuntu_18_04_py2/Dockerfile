@@ -8,9 +8,9 @@ RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-
 
 RUN cd / && \
     virtualenv env && \
-    env/bin/pip install --upgrade pip==9.0.1 && \
-    env/bin/pip install --upgrade virtualenv==15.1.0 && \
-    env/bin/pip install wagon==0.11.0
+    env/bin/pip install --no-cache-dir --upgrade pip==9.0.1 && \
+    env/bin/pip install --no-cache-dir --upgrade virtualenv==15.1.0 && \
+    env/bin/pip install --no-cache-dir wagon==0.11.0
 
 WORKDIR /packaging
 
