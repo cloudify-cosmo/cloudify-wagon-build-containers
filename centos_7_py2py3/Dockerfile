@@ -9,7 +9,7 @@ RUN yum install -y python-virtualenv
 RUN cd / && \
     virtualenv py2env && \
     source py2env/bin/activate && \
-    pip install --upgrade pip==9.0.1 && \
+    pip install --upgrade pip==19.3.1 && \
     pip install wagon==0.11.0
 
 
