@@ -14,10 +14,10 @@ echo "manylinux1_compatible = False" > "/env/bin/_manylinux.py"
 if test -f ${CONSTRAINTS_FILE}
 then
     echo "## $CONSTRAINTS_FILE exist"
-    wagon create -r ${REQUIRMENTS_FILE} -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}'' .
+    wagon create -r ${REQUIRMENTS_FILE} --build-tag "redhat-Maipo" -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}'' .
 else
     echo "## $CONSTRAINTS_FILE doesn't exist"
-    wagon create -r ${REQUIRMENTS_FILE} -v -f .
+    wagon create -r ${REQUIRMENTS_FILE} --build-tag "redhat-Maipo" -v -f .
 fi
 
 cp -R * /workspace/build/
