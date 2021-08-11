@@ -6,10 +6,12 @@ ARG USERNAME
 
 ARG PASSWORD
 
+RUN yum update -y
+
 RUN subscription-manager register --username "$USERNAME" --password "$PASSWORD" --auto-attach
 
-RUN yum install centos-release-scl -y
 RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
+RUN yum install centos-release-scl -y
 RUN yum install python27 -y
 RUN scl enable python27 bash
 RUN yum list python27\*
