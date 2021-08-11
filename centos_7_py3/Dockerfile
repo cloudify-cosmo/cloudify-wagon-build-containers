@@ -4,11 +4,20 @@ MAINTAINER Cosmo (hello@cloudify.co)
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
+# RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
+ 
+# RUN yum install -y python37-pip
+
+RUN yum update -y
+
+RUN yum install python3-pip -y
+
+
 RUN yum -y install --enablerepo=updates python3 python3-devel
 
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+# RUN curl "http://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 
-RUN python3 get-pip.py
+# RUN python3 get-pip.py
 
 RUN pip3 install virtualenv==15.1.0
 RUN cd / && \
