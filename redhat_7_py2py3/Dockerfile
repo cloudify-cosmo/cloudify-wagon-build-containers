@@ -27,6 +27,7 @@ RUN cd / && \
     virtualenv py2env && \
     source py2env/bin/activate && \
     pip install --upgrade pip && \
+    pip3 install --upgrade setuptools && \
     pip install wagon==0.11.0
 
 RUN yum -y install python3 python3-devel
