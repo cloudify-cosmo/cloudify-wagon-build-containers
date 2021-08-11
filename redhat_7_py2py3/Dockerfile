@@ -8,9 +8,18 @@ ARG PASSWORD
 
 RUN subscription-manager register --username "$USERNAME" --password "$PASSWORD" --auto-attach
 
+RUN yum install centos-release-scl -y
+
 RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
 
 RUN yum-config-manager --enable rhel-7-server-optional-rpms
+
+RUN yum-config-manager --add-repo=https://copr.fedoraproject.org/coprs/rhscl/centos-release-scl/repo/epel-7/rhscl-centos-release-scl-epel-7.repo
+RUN yum install centos-release-scl
+
+RUN yum install python27 -y
+RUN scl enable python27 bash
+RUN yum list python27\*
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
