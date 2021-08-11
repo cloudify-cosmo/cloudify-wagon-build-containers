@@ -4,11 +4,11 @@ MAINTAINER Cosmo (hello@cloudify.co)
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
+RUN yum update -y
+
+RUN yum install python3-pip -y
+
 RUN yum -y install --enablerepo=updates python3 python3-devel
-
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-
-RUN python3 get-pip.py
 
 RUN pip3 install virtualenv==15.1.0
 RUN cd / && \
