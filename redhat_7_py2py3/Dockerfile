@@ -6,8 +6,6 @@ ARG USERNAME
 
 ARG PASSWORD
 
-RUN yum update -y
-
 RUN subscription-manager register --username "$USERNAME" --password "$PASSWORD" --auto-attach
 
 RUN yum install centos-release-scl -y
