@@ -9,14 +9,7 @@ ARG PASSWORD
 RUN subscription-manager register --username "$USERNAME" --password "$PASSWORD" --auto-attach
 
 RUN yum install centos-release-scl -y
-
 RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
-
-RUN yum-config-manager --enable rhel-7-server-optional-rpms
-
-RUN yum-config-manager --add-repo=https://copr.fedoraproject.org/coprs/rhscl/centos-release-scl/repo/epel-7/rhscl-centos-release-scl-epel-7.repo
-RUN yum install centos-release-scl
-
 RUN yum install python27 -y
 RUN scl enable python27 bash
 RUN yum list python27\*
@@ -28,7 +21,7 @@ RUN yum install -y python-virtualenv
 RUN cd / && \
     virtualenv py2env && \
     source py2env/bin/activate && \
-    pip install --upgrade pip==9.0.1 && \
+    pip install --upgrade pip && \
     pip install wagon==0.11.0
 
 RUN yum -y install python3 python3-devel
