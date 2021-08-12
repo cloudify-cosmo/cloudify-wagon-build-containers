@@ -6,7 +6,6 @@ RUN yum install centos-release-scl -y
 RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
 RUN yum install python27 -y
 RUN scl enable python27 bash
-RUN yum list python27\*
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
