@@ -2,6 +2,11 @@ FROM amd64/centos:7
 
 MAINTAINER Cosmo (hello@cloudify.co)
 
+RUN yum install centos-release-scl -y
+RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
+RUN yum install python27 -y
+RUN scl enable python27 bash
+
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
 RUN yum install -y python-virtualenv
@@ -9,7 +14,7 @@ RUN yum install -y python-virtualenv
 RUN cd / && \
     virtualenv py2env && \
     source py2env/bin/activate && \
-    pip install --upgrade pip==9.0.1 && \
+    pip install --upgrade pip && \
     pip install wagon==0.11.0
 
 
