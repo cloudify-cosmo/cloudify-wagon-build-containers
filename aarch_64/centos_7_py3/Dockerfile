@@ -1,4 +1,4 @@
-FROM centos/aarch64:7
+FROM arm64v8/centos:7
 
 MAINTAINER Cosmo (hello@cloudify.co)
 
