@@ -15,7 +15,7 @@ RUN cd / && \
     virtualenv py2env && \
     source py2env/bin/activate && \
     pip install --upgrade pip && \
-    pip install wagon==0.11.0
+    pip install https://github.com/cloudify-cosmo/wagon/archive/refs/heads/master.zip
 
 
 RUN yum -y install --enablerepo=updates python3 python3-devel
@@ -25,7 +25,7 @@ RUN cd / && \
     source py3env/bin/activate && \
     pip3 install --upgrade pip==19.3.1 && \
     pip3 install --upgrade setuptools && \
-    pip3 install wagon==0.11.0
+    pip3 install https://github.com/cloudify-cosmo/wagon/archive/refs/heads/master.zip
 
 
 WORKDIR /packaging

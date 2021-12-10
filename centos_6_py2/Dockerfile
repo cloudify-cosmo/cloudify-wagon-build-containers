@@ -45,7 +45,7 @@ RUN cd / && \
     source env/bin/activate && \
     pip install --upgrade pip==9.0.1 && \
     pip install --upgrade virtualenv==15.1.0 && \
-    pip install wagon==0.11.0
+    pip install https://github.com/cloudify-cosmo/wagon/archive/refs/heads/master.zip
 
 
 WORKDIR /packaging

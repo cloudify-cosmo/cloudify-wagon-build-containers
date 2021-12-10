@@ -16,7 +16,7 @@ RUN cd / && \
     source env/bin/activate && \
     pip3 install --upgrade pip==19.3.1 && \
     pip3 install --upgrade virtualenv==15.1.0 && \
-    pip3 install https://github.com/cloudify-cosmo/wagon/archive/refs/heads/Sort-Wheels-For-Consistent-Wagon-Platform-Results.zip
+    pip3 install https://github.com/cloudify-cosmo/wagon/archive/refs/heads/master.zip
 
 WORKDIR /packaging
 
