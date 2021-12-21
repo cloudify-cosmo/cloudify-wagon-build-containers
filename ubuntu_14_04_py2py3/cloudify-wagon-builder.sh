@@ -11,6 +11,8 @@ if [[ -f /packaging/extra-packaging-instructions.sh ]]; then
 fi
 source /$1/bin/activate
 echo "manylinux1_compatible = False" > "/$1/bin/_manylinux.py"
+echo "manylinux2010_compatible = False" >> "/$1/bin/_manylinux.py"
+echo "manylinux2014_compatible = False" >> "/$1/bin/_manylinux.py"
 if [[ -f "${CONSTRAINTS_FILE}" ]]; then
     echo "## $CONSTRAINTS_FILE exist"
     wagon create --pip /$1/bin/pip --pip /$2/bin/pip --pyver "27" --pyver "36" --build-tag "Ubuntu-trusty" -r ${REQUIREMENTS_FILE} -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}'' .

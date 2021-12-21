@@ -11,6 +11,8 @@ then
 fi
 source /env/bin/activate
 echo "manylinux1_compatible = False" > "/env/bin/_manylinux.py"
+echo "manylinux2010_compatible = False" >> "/env/bin/_manylinux.py"
+echo "manylinux2014_compatible = False" >> "/env/bin/_manylinux.py"
 if test -f ${CONSTRAINTS_FILE}
 then
     echo "## $CONSTRAINTS_FILE exist"
