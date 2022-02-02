@@ -39,6 +39,7 @@ RUN cd /tmp && \
     python3.6 setup.py install && \
     curl https://bootstrap.pypa.io/pip/3.6/get-pip.py | python3.6
 
+
 RUN pip3 install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \
