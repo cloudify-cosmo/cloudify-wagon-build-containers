@@ -19,7 +19,7 @@ RUN cd /tmp && \
     tar -xvf setuptools-28.8.0.tar.gz && \
     cd setuptools-28.8.0 && \
     python3.6 setup.py install && \
-    curl https://bootstrap.pypa.io/3.6/get-pip.py | python3.6
+    curl https://bootstrap.pypa.io/pip/3.6/get-pip.py | python3.6
 
 RUN ln -s /usr/local/bin/pip3 /usr/bin/pip3
 
