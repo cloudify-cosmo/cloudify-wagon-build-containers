@@ -17,7 +17,7 @@ RUN yum -y install python3 python3-devel
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+RUN curl "https://bootstrap.pypa.io/3.6/get-pip.py" -o "get-pip.py"
 
 RUN python3 get-pip.py
 
