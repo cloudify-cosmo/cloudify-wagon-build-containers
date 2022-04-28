@@ -4,7 +4,7 @@ MAINTAINER Cosmo (hello@cloudify.co)
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
 
-RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python
+RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/pip/2.7/get-pip.py | python
 
 RUN pip install virtualenv==15.1.0
 RUN cd / && \
