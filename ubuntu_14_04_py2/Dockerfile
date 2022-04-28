@@ -6,7 +6,7 @@ RUN apt-get update
 
 RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr curl git
 
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+RUN curl "https://bootstrap.pypa.io/pip/2.7/get-pip.py" -o "get-pip.py"
 
 RUN python get-pip.py
 
