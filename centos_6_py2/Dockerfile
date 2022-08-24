@@ -39,6 +39,9 @@ RUN cd /tmp && \
     python2.7 setup.py install && \
     curl https://bootstrap.pypa.io/get-pip.py | python2.7
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN pip install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \

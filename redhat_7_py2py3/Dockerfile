@@ -19,6 +19,9 @@ RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel open
 
 RUN yum install -y python-virtualenv
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN cd / && \
     virtualenv py2env && \
     source py2env/bin/activate && \

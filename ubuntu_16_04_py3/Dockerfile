@@ -14,6 +14,9 @@ RUN cd /tmp && \
     make && \
     make altinstall
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN cd / && \
     python3.6 -m venv env && \
     env/bin/pip3 install --upgrade pip==19.3.1 setuptools && \

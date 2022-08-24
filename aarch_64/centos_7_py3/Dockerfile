@@ -10,6 +10,9 @@ RUN yum install python3-pip -y
 
 RUN yum -y install --enablerepo=updates python3 python3-devel
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN pip3 install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \
