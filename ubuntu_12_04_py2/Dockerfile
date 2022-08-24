@@ -13,6 +13,9 @@ RUN python get-pip.py
 
 RUN ln -s /usr/local/bin/pip /usr/bin/pip
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN pip install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \

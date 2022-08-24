@@ -20,6 +20,9 @@ RUN cd / && \
 
 RUN yum -y install --enablerepo=updates python3 python3-devel
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN cd / && \
     python3 -m venv py3env && \
     source py3env/bin/activate && \

@@ -8,6 +8,9 @@ RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-
 
 RUN  apt-get install -y python3-venv
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN cd / && \
     python3 -m venv env && \
     env/bin/pip3 install --upgrade pip==19.3.1 setuptools && \

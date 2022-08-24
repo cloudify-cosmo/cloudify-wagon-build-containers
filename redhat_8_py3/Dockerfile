@@ -22,6 +22,9 @@ RUN curl "https://bootstrap.pypa.io/pip/3.6/get-pip.py" -o "get-pip.py"
 
 RUN python3 get-pip.py
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN pip3 install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \

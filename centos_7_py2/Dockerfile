@@ -6,6 +6,9 @@ RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel open
 
 RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/pip/2.7/get-pip.py | python
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN pip install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \

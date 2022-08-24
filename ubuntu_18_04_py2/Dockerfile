@@ -6,6 +6,9 @@ RUN apt-get update
 
 RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr python-pip python-virtualenv git
 
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN cd / && \
     virtualenv env && \
     env/bin/pip install --upgrade pip==9.0.1 && \
