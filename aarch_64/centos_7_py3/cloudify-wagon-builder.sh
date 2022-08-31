@@ -5,6 +5,9 @@ echo "Starting..."
 CONSTRAINTS_FILE=/packaging/constraints.txt
 REQUIRMENTS_FILE=/packaging/dev-requirements.txt
 
+localedef -c -f UTF-8 -i en_US en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 if test -f /packaging/extra-packaging-instructions.sh
 then
     source /packaging/extra-packaging-instructions.sh
