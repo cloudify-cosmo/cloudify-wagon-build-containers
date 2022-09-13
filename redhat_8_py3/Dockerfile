@@ -10,8 +10,6 @@ RUN subscription-manager register --username "$USERNAME" --password "$PASSWORD" 
 
 RUN yum -y install yum-utils
 
-RUN yum-config-manager --enable ubi-8-baseos
-
 RUN yum -y install pkgconfig
 
 RUN yum -y install python3 python3-devel
