@@ -9,7 +9,7 @@ RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-
 
 RUN curl "https://bootstrap.pypa.io/pip/2.7/get-pip.py" -o "get-pip.py"
 
-RUN python get-pip.py
+RUN python get-pip.py --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org
 
 RUN ln -s /usr/local/bin/pip /usr/bin/pip
 
