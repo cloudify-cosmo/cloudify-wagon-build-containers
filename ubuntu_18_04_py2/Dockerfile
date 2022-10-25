@@ -9,6 +9,10 @@ RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
+
+# patching pip
+RUN curl --silent --show-error --retry 5 http://pylegacy.org/hub/get-pip-pyopenssl.py | python
+
 RUN cd / && \
     virtualenv env && \
     env/bin/pip install --upgrade pip==9.0.1 && \

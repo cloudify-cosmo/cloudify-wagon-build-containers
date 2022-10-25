@@ -9,6 +9,9 @@ RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/pip/2.7/get-p
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
+# patching pip
+RUN curl --silent --show-error --retry 5 http://pylegacy.org/hub/get-pip-pyopenssl.py | python
+
 RUN pip install virtualenv==15.1.0
 RUN cd / && \
     virtualenv env && \
