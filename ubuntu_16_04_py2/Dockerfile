@@ -4,10 +4,11 @@ MAINTAINER Cosmo (hello@cloudify.co)
 
 RUN apt-get update
 
-RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr python-pip python-virtualenv git
+RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr python-pip python-virtualenv git curl
 
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
+RUN dpkg-reconfigure locales
 
 # patching pip
 RUN curl --silent --show-error --retry 5 http://pylegacy.org/hub/get-pip-pyopenssl.py | python
