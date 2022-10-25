@@ -4,7 +4,7 @@ MAINTAINER Cosmo (hello@cloudify.co)
 
 RUN apt-get update
 
-RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr curl libpq-dev zlib1g-dev wget git-all
+RUN apt-get -y install build-essential python-dev gcc openssl libffi-dev libssl-dev libvirt-dev python-netaddr curl libpq-dev zlib1g-dev wget git-all ca-certificates locales
 
 RUN cd /tmp && \
     wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz && \
@@ -14,6 +14,7 @@ RUN cd /tmp && \
     make && \
     make altinstall
 
+RUN dpkg-reconfigure locales
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
