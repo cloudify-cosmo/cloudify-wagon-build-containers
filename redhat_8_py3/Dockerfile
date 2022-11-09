@@ -6,6 +6,8 @@ ARG USERNAME
 
 ARG PASSWORD
 
+ENV SMDEV_CONTAINER_OFF=1
+
 RUN subscription-manager register --username "$USERNAME" --password "$PASSWORD" --auto-attach
 
 RUN yum -y install yum-utils
