@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi
+FROM registry.access.redhat.com/ubi8/ubi:8.6
 
 MAINTAINER Cosmo (hello@cloudify.co)
 
