@@ -12,8 +12,8 @@ if test -f /packaging/extra-packaging-instructions.sh
 then
     source /packaging/extra-packaging-instructions.sh
 fi
-source /env/bin/activate
-echo "manylinux1_compatible = False" > "/env/bin/_manylinux.py"
+source /tmp/env/bin/activate
+echo "manylinux1_compatible = False" > "/tmp/env/bin/_manylinux.py"
 if test -f ${CONSTRAINTS_FILE}
 then
     echo "## $CONSTRAINTS_FILE exist"
@@ -23,4 +23,4 @@ else
     wagon create -r ${REQUIRMENTS_FILE} --build-tag "centos-altarch" -v -f .
 fi
 
-cp -R * /workspace/build/
+cp -R * /tmp/workspace/build/

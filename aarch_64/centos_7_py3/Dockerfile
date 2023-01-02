@@ -1,20 +1,12 @@
-FROM arm64v8/centos:7
+FROM arm64v8/python:3
 
 MAINTAINER Cosmo (hello@cloudify.co)
-
-RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
-
-RUN yum update -y
-
-RUN yum install python3-pip -y
-
-RUN yum -y install --enablerepo=updates python3 python3-devel
 
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 RUN pip3 install virtualenv==15.1.0
-RUN cd / && \
+RUN cd /tmp && \
     virtualenv env && \
     source env/bin/activate && \
     pip3 install --upgrade pip==19.3.1 && \
@@ -23,10 +15,8 @@ RUN cd / && \
 
 WORKDIR /packaging
 
-RUN mkdir -p /workspace/build/
+RUN mkdir -p /tmp/workspace/build/
 
 COPY cloudify-wagon-builder.sh /cloudify-wagon-builder.sh
 
-RUN chmod +x /cloudify-wagon-builder.sh
-
-CMD ["/cloudify-wagon-builder.sh"]
+CMD ["bash", "/cloudify-wagon-builder.sh"]
