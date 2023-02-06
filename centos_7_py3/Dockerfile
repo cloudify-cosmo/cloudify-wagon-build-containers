@@ -2,7 +2,7 @@ FROM amd64/centos:7
 
 MAINTAINER Cosmo (hello@cloudify.co)
 
-RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
+RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr dos2unix
 
 RUN yum update -y
 
@@ -27,6 +27,8 @@ WORKDIR /packaging
 RUN mkdir -p /workspace/build/
 
 COPY cloudify-wagon-builder.sh /cloudify-wagon-builder.sh
+# RUN dos2unix /cloudify-wagon-builder.sh && yum remove -y dos2unix && rm -rf /var/lib/apt/lists/*
+RUN dos2unix /cloudify-wagon-builder.sh
 
 RUN chmod +x /cloudify-wagon-builder.sh
 
