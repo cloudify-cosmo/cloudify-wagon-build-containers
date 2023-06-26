@@ -2,8 +2,7 @@ FROM amd64/centos:7
 
 MAINTAINER Cosmo (hello@cloudify.co)
 
-RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
-
+RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr libpq-devel postgresql postgresql-devel
 RUN yum update -y
 
 RUN yum install python3-pip -y
@@ -30,4 +29,8 @@ COPY cloudify-wagon-builder.sh /cloudify-wagon-builder.sh
 
 RUN chmod +x /cloudify-wagon-builder.sh
 
+ENV PATH="$PATH:/usr/pgsql-9.3/bin/"
+RUN cd / && \
+    source env/bin/activate && \
+    pip3 install psycopg2
 CMD ["/cloudify-wagon-builder.sh"]
