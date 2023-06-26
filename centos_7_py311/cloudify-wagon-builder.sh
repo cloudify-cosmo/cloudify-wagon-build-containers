@@ -12,14 +12,14 @@ then
     source /packaging/extra-packaging-instructions.sh
 fi
 source /env/bin/activate
-echo "manylinux1_compatible = False" > "/env/bin/_manylinux.py"
+# echo "manylinux1_compatible = False" > "/env/bin/_manylinux.py"
 if test -f ${CONSTRAINTS_FILE}
 then
     echo "## $CONSTRAINTS_FILE exist"
-    wagon create -r ${REQUIRMENTS_FILE} --build-tag "el" -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}'' .
+    wagon create -r ${REQUIRMENTS_FILE} --build-tag "uni" -v -f -a '--no-cache-dir -c '${CONSTRAINTS_FILE}'' .
 else
     echo "## $CONSTRAINTS_FILE doesn't exist"
-    wagon create -r ${REQUIRMENTS_FILE} --build-tag "el" -v -f .
+    wagon create -r ${REQUIRMENTS_FILE} --build-tag "uni" -v -f .
 fi
 
 cp -R * /workspace/build/
