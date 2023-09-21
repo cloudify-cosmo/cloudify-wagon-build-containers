@@ -3,6 +3,14 @@ set -e
 echo "Starting..."
 
 alias python=/usr/local/bin/python3.11
+cat << EOF > $HOME/pip.conf
+[global]
+quiet = 0
+verbose = 2
+trusted-host =
+    eos2git.cec.lab.emc.com
+EOF
+export PIP_CONFIG_FILE=$HOME/pip.conf
 
 CONSTRAINTS_FILE=/packaging/constraints.txt
 REQUIRMENTS_FILE=/packaging/dev-requirements.txt
