@@ -38,6 +38,7 @@ RUN rm -rf /usr/bin/python
 RUN rm -rf /usr/local/bin/python
 RUN ln -s /usr/local/bin/python3.11 /usr/bin/python 
 RUN ln -s /usr/local/bin/python3.11 /usr/local/bin/python
+
 RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11
 RUN pip3.11 install virtualenv
 RUN cd / && \
