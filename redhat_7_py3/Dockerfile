@@ -12,7 +12,6 @@ RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
 
 RUN yum-config-manager --enable rhel-7-server-optional-rpms
 
-
 RUN yum -y install python3 python3-devel
 
 RUN yum -y install python-devel gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel libvirt-devel python-netaddr
