@@ -19,7 +19,7 @@ RUN yum -y install pkgconfig
 RUN yum -y install python3 python3-devel
 
 RUN yum -y install gcc openssl git libxslt-devel libxml2-devel openldap-devel libffi-devel openssl-devel
-RUN yum -y install virt-manager libvirt-libs libvirt-devel
+# RUN yum -y install virt-manager libvirt-libs libvirt-devel
 RUN yum -y install glibc-locale-source glibc-langpack-en
 RUN curl "https://bootstrap.pypa.io/pip/3.6/get-pip.py" -o "get-pip.py"
 
