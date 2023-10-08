@@ -2,6 +2,8 @@
 set -e
 echo "Starting..."
 
+# alias python=/usr/local/bin/python3.11
+
 CONSTRAINTS_FILE=/packaging/constraints.txt
 REQUIRMENTS_FILE=/packaging/dev-requirements.txt
 
