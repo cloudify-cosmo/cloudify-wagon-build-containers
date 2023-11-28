@@ -5,7 +5,15 @@ echo "Starting..."
 alias python=/usr/local/bin/python3.11
 
 CONSTRAINTS_FILE=/packaging/constraints.txt
-REQUIRMENTS_FILE=/packaging/dev-requirements.txt
+REQUIRMENTS_FILE=/packaging/requirements.txt
+DEV_REQUIREMENTS_FILE=/packaging/dev-requirements.txt
+
+if test -f ${REQUIRMENTS_FILE}
+then
+    echo "## $REQUIRMENTS_FILE exists"
+else
+    REQUIRMENTS_FILE=$DEV_REQUIREMENTS_FILE
+fi
 
 localedef -c -f UTF-8 -i en_US en_US.UTF-8
 export LC_ALL=en_US.UTF-8
