@@ -9,6 +9,7 @@ REQUIRMENTS_FILE=/packaging/requirements.txt
 DEV_REQUIREMENTS_FILE=/packaging/dev-requirements.txt
 
 if test -f ${REQUIRMENTS_FILE}
+then
     echo "## $REQUIRMENTS_FILE exists"
 else
     REQUIRMENTS_FILE=$DEV_REQUIREMENTS_FILE
