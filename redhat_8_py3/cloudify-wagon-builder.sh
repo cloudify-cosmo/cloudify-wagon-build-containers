@@ -3,7 +3,14 @@ set -e
 echo "Starting..."
 
 CONSTRAINTS_FILE=/packaging/constraints.txt
-REQUIRMENTS_FILE=/packaging/dev-requirements.txt
+REQUIRMENTS_FILE=/packaging/requirements.txt
+DEV_REQUIREMENTS_FILE=/packaging/dev-requirements.txt
+
+if test -f ${REQUIRMENTS_FILE}
+    echo "## $REQUIRMENTS_FILE exists"
+else
+    REQUIRMENTS_FILE=$DEV_REQUIREMENTS_FILE
+fi
 
 if test -f /packaging/extra-packaging-instructions.sh
 then
